@@ -1,0 +1,14 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+@media screen and (orientation: portrait){
+    .test {
+        font-size: .5rem;
+    }
+}
+@media screen and (orientation: landscape){
+    .test {
+        font-size: .2rem;
+    }
+}
