@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>全局API</title>
+    </head>
+    <body>
+        <div id="app">
+            {{ msg }}
+            <input v-focus />
+            <new-tag>{{ tdel }}</new-tag>
+        </div>
+    </body>
+    <script src="vue.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            component: {
+                'new-tag': NewTag
+            },
+            data: {
+                msg: '全局API',
+                tdel: '测试delete'
+            }
+        });
+        // Vue构造器子类
+        var NewTag = Vue.extend({
+            template: '<div>Vue子组件</div>'
+        });
+        Vue.component('new-tag', NewTag);
+        // 延迟回调
+        vm.msg = '延迟回调';
+        console.log('DOM没有更新');
+        Vue.nextTick(function() {
+            console.log('DOM更新了');
+            setTimeout(function() {
+                console.log('setTimeout=>DOM更新了');
+            }, 3000);
+        });
+        // 设置对象属性
+        console.log(vm.$data.msg);
+        Vue.set(vm.$data, 'msg', '设置对象属性');
+        // 删除对象属性
+        Vue.delete(vm.$data, 'tdel');
+        // 自定义指令，注册一个全局自定义指令
+        Vue.directive('focus', {
+            // 当绑定元素插入到DOM中聚焦元素
+            inserted: function(el) {
+                el.focus();
+            }
+        });
+        var focus = Vue.directive('focus');
+        console.log(focus);
+    </script>
+</html>
