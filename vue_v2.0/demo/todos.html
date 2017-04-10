@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>todos 循环列表测试</title>
+    </head>
+    <body>
+        <div id="app">
+            <ol>
+                <todo-item v-for="item in todos" v-bind:todo="item"></todo-item>
+            </ol>
+        </div>
+    </body>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li> {{ todo.text }} </li>'
+        });
+        var app = new Vue({
+            el: '#app',
+            data: {
+                todos: [
+                    { text: 'todo list 1'},
+                    { text: 'todo list 2'},
+                    { text: 'todo list 3'}
+                ]
+            }
+        });
+    </script>
+</html>
