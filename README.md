@@ -11,9 +11,3 @@ vue1.0更新:
 - [x] [webpack环境搭建](./vue_v1.0/webpack搭建)
 - [x] [Vue快速总览](./vue_v1.0/vue_v1.0/vue快速总览.md)
 - [x] [全局配置与全局API](./vue_v1.0/vue_v1.0/全局配置与全局API.md)
-
-```
-import Vue from 'vue'
-
-const app = new Vue({})
-```
