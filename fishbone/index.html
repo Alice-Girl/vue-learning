@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style lang="less">
+    /** fishbone **/
+    .js-fishbone {
+      position: relative;
+      width: 100%;
+      padding: 20px 50px;
+      .fish-data {
+        position: relative;
+        text-align: left;
+        overflow: hidden;
+        .fish-items {
+          width: 1500px;  // 5个item
+          padding: 0;
+          margin: 0;
+          .item {
+            position: relative;
+            width: 256px;
+            padding: 20px;
+            margin-left: 20px;
+            color: #fefefe;
+            text-align: left;
+            border-left: 1px solid #fefefe;
+            display: inline-block;
+            &::before {
+              position: absolute;
+              top: 0;
+              left: -10px;
+              content: '';
+              width: 20px;
+              height: 20px;
+              margin-right: 10px;
+              border-radius: 50%;
+              display: inline-block;
+              background-color: #fefefe;
+            }
+            &.bottom {
+              &::before {
+                top: auto;
+                bottom: 0;
+                left: -10px;
+              }
+            }
+          }
+        }
+      }
+      .fish-line {
+        height: 1px;
+        border: 1px dashed #fefefe;
+      }
+      .fish-slide {
+        .icon-arrow-left {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: -16px;
+          width: 18px;
+          height: 32px;
+          display: block;
+          background: url('/img/version_sg/arrow-left.png') no-repeat;
+        }
+        .icon-arrow-right {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin-top: -16px;
+          width: 18px;
+          height: 32px;
+          display: block;
+          background: url('/img/version_sg/arrow-right.png') no-repeat;
+        }
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <div class="js-fishbone">
+        <div class="fish-data">
+          <ul class="fish-items">
+            <li class="item">
+              <h3 class="item-title">2014/02</h3>
+              <p class="item-desc">Launch of oBike in Singapore</p>
+            </li>
+            <li class="item">
+              <h3 class="item-title">2014/02/05</h3>
+              <p class="item-desc">50,000 active oBike users</p>
+            </li>
+            <li class="item">
+              <h3 class="item-title">2014/02/0522222</h3>
+              <p class="item-desc">50,000 active oBike users</p>
+            </li>
+            <li class="item">
+              <h3 class="item-title">2014/02/0522222</h3>
+              <p class="item-desc">50,000 active oBike users</p>
+            </li>
+            <li class="item">
+              <h3 class="item-title">2014/02/0522222</h3>
+              <p class="item-desc">50,000 active oBike users</p>
+            </li>
+          </ul>
+        </div>
+        <div class="fish-line"></div>
+        <div class="fish-data">
+          <ul class="fish-items">
+            <li class="item bottom">
+              <h3 class="item-title">2014/02/04</h3>
+              <p class="item-desc">2,000 oBikes deployed in major HDB estates</p>
+            </li>
+            <li class="item bottom">
+              <h3 class="item-title">2014/02/06</h3>
+              <p class="item-desc">An additional 5,000 oBikes deployed islandwide</p>
+            </li>
+            <li class="item bottom">
+              <h3 class="item-title">2014/02/0622233</h3>
+              <p class="item-desc">An additional 5,000 oBikes deployed islandwide</p>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="fish-slide" data-slide="prev"><i class="icon-arrow-left"></i></a>
+        <a href="#" class="fish-slide" data-slide="next"><i class="icon-arrow-right"></i></a>
+      </div>
+    </div>
+  </body>
+</html>
